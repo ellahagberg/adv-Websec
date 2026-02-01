@@ -47,10 +47,10 @@ def find_missing_digit(card: str) -> str:
         if luhn(candidate):
             return d
 
-    raise ValueError("No valid digit")
 
 def main():
-    print(intToHex(8888,4))
+    #practice quiz
+    """ print(intToHex(8888,4))
 
     hex4 = intToHex(8888, 4)
     b4 = hexToByte(hex4)
@@ -66,11 +66,22 @@ def main():
     hx = "0123456789abcdef"
     b8 = hexToByte(hx)
     result = byteToInt(b8)
-    print(result)
+    print(result) """
 
+    #riktiga quizet
     print("".join(find_missing_digit(line.strip())
                   for line in open("testin.txt")
                   if line.strip()))
     
+    hx = "feedf00d70dadb0b"      
+    b8 = hexToByte(hx)         
+    digest = sha256_bytes(b8)   
+    result = byteToInt(digest)  
+    print(result)
+
+    hex4 = intToHex(3152, 4)      
+    b4 = hexToByte(hex4)          
+    digest = sha256_bytes(b4)     
+    print(byteToHex(digest))
 if __name__ == "__main__":
     main()
