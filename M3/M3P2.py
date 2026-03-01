@@ -15,6 +15,7 @@ def load_ip_pairs(pcap_file):
     return pairs
 
 
+#blev chill
 def disclosure_attack(nazir_ip, mix_ip, m, pcap_file):
     pairs = load_ip_pairs(pcap_file)
 
@@ -65,6 +66,8 @@ def disclosure_attack(nazir_ip, mix_ip, m, pcap_file):
     return sum(ip_to_int(ip) for ip in partners)
 
 
+#command för att köra: python3 M3P2.py 61.152.13.37 95.235.155.122 8 cia.log.3.pcap
+# sen cd gunzip -k cia.log.3.pcap.gz för pcap
 if __name__ == "__main__":
     nazir_ip = sys.argv[1]
     mix_ip = sys.argv[2]
